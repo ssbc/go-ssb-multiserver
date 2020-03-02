@@ -11,6 +11,8 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
+	"go.cryptoscope.co/netwrap"
+	"go.cryptoscope.co/secretstream"
 	"go.cryptoscope.co/ssb"
 )
 
@@ -31,6 +33,11 @@ func (na NetAddress) String() string {
 	sb.WriteString("~shs:")
 	sb.WriteString(base64.StdEncoding.EncodeToString(na.Ref.PubKey()))
 	return sb.String()
+}
+
+// WrappedAddr returns a netwrap'ed address that can be dialed easily using secretstream
+func (na NetAddress) WrappedAddr() net.Addr {
+	return netwrap.WrapAddr(&na.Addr, secretstream.Addr{PubKey: na.Ref.PubKey()})
 }
 
 func ParseNetAddress(input []byte) (*NetAddress, error) {

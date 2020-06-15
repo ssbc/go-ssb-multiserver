@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"go.cryptoscope.co/ssb"
+	ssb "go.mindeco.de/ssb-refs"
 
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"

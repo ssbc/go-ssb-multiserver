@@ -13,7 +13,7 @@ import (
 	"github.com/pkg/errors"
 	"go.cryptoscope.co/netwrap"
 	"go.cryptoscope.co/secretstream"
-	"go.cryptoscope.co/ssb"
+	refs "go.mindeco.de/ssb-refs"
 )
 
 var (
@@ -23,7 +23,7 @@ var (
 
 type NetAddress struct {
 	Addr net.TCPAddr
-	Ref  *ssb.FeedRef
+	Ref  *refs.FeedRef
 }
 
 func (na NetAddress) String() string {
@@ -84,9 +84,9 @@ func ParseNetAddress(input []byte) (*NetAddress, error) {
 			}
 
 			// implied by ~shs: indicating v1
-			na.Ref = &ssb.FeedRef{
+			na.Ref = &refs.FeedRef{
 				ID:   keyBuf[:32],
-				Algo: ssb.RefAlgoFeedSSB1,
+				Algo: refs.RefAlgoFeedSSB1,
 			}
 			return &na, nil
 		}

@@ -96,6 +96,8 @@ go.cryptoscope.co/secretstream v1.2.2 h1:kPxsgWrTDFyS9ZklcD0si1KGljPLz6mmPKnFQjG
 go.cryptoscope.co/secretstream v1.2.2/go.mod h1:7nRGZ7fTqSgQAnv2Y4m8xQsS3MFxvB7I0C19reUNlXg=
 go.mindeco.de/ssb-refs v0.0.0-20200615115708-7b8437f55cef h1:sqnmWdYTHwRmymPS45TJd12+EDSo3rd2NiHCH0FgRFQ=
 go.mindeco.de/ssb-refs v0.0.0-20200615115708-7b8437f55cef/go.mod h1:u3EqvzDljgzrGT93hyWA1VbE06NKdavnpJ4sMXZxQxE=
+go.mindeco.de/ssb-refs v0.1.1-0.20210413150817-0208d30b0130 h1:jWVtnRvPeMnmVyhdAtmPUZJRaYVRtSik1RtDheeBWm0=
+go.mindeco.de/ssb-refs v0.1.1-0.20210413150817-0208d30b0130/go.mod h1:OnBnV02ux4lLsZ39LID6yYLqSDp+dqTHb/3miYPkQFs=
 golang.org/x/net v0.0.0-20180218175443-cbe0f9307d01/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20180406214816-61147c48b25b/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20181114220301-adae6a3d119a/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=

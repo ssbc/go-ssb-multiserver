@@ -23,7 +23,7 @@ var (
 
 type NetAddress struct {
 	Addr net.TCPAddr
-	Ref  *refs.FeedRef
+	Ref  refs.FeedRef
 }
 
 func (na NetAddress) String() string {
@@ -83,12 +83,8 @@ func ParseNetAddress(input []byte) (*NetAddress, error) {
 				return nil, errors.Wrap(ErrNoSHSKey, "multiserver: pubkey not 32bytes long")
 			}
 
-			// implied by ~shs: indicating v1
-			na.Ref = &refs.FeedRef{
-				ID:   keyBuf[:32],
-				Algo: refs.RefAlgoFeedSSB1,
-			}
-			return &na, nil
+			na.Ref, err = refs.NewFeedRefFromBytes(keyBuf[:32], refs.RefAlgoFeedSSB1)
+			return &na, err
 		}
 	}
 	return nil, ErrNoNetAddr

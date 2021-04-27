@@ -1,7 +1,6 @@
 package multiserver
 
 import (
-	"bytes"
 	"encoding/base64"
 	"fmt"
 	"strings"
@@ -70,12 +69,12 @@ func ParseTunnelAddress(input string) (*TunnelAddress, error) {
 	}
 
 	// check it matches the target
-	if !bytes.Equal(target.ID, pubKey) {
+	if !target.PubKey().Equal(pubKey) {
 		return nil, fmt.Errorf("mutliserver: shs: portion doesn't equal target")
 	}
 
 	var ta TunnelAddress
-	ta.Intermediary = *intermediary
-	ta.Target = *target
+	ta.Intermediary = intermediary
+	ta.Target = target
 	return &ta, nil
 }

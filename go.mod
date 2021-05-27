@@ -5,10 +5,9 @@ go 1.14
 require (
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.6.1
-	go.cryptoscope.co/librarian v0.2.0 // indirect
 	go.cryptoscope.co/netwrap v0.1.1
 	go.cryptoscope.co/secretstream v1.2.2
-	go.mindeco.de/ssb-refs v0.1.1-0.20210413150817-0208d30b0130
+	go.mindeco.de/ssb-refs v0.3.0
 )
 
 // We need our internal/extra25519 since agl pulled his repo recently.

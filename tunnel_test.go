@@ -17,8 +17,8 @@ func TestParseTunnelAddressSimple(t *testing.T) {
 	r.NoError(err)
 
 	want := &TunnelAddress{
-		Intermediary: *intermediary,
-		Target:       *target,
+		Intermediary: intermediary,
+		Target:       target,
 	}
 
 	input := `tunnel:@7MG1hyfz8SsxlIgansud4LKM57IHIw2Okw/hvOdeJWw=.ed25519:@1b9KP8znF7A4i8wnSevBSK2ZabI/Re4bYF/Vh3hXasQ=.ed25519~shs:1b9KP8znF7A4i8wnSevBSK2ZabI/Re4bYF/Vh3hXasQ=`

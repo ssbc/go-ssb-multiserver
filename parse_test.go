@@ -13,7 +13,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func mustParseFeedRef(ref string) *ssb.FeedRef {
+func mustParseFeedRef(ref string) ssb.FeedRef {
 	r, err := ssb.ParseFeedRef(ref)
 	if err != nil {
 		panic(err)

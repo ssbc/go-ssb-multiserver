@@ -58,6 +58,18 @@ func TestParseNetAddress(t *testing.T) {
 			inputIdx:    1,
 		},
 
+		{
+			name:  "localhost",
+			input: "net:localhost:18894~shs:sAjl0gdm+k6enX4o79FEwAz/XYiMGM4MViPMr97kOcw=",
+			want: &NetAddress{
+				Addr: net.TCPAddr{
+					IP:   net.ParseIP("127.0.0.1"),
+					Port: 18894,
+				},
+				Ref: mustParseFeedRef("@sAjl0gdm+k6enX4o79FEwAz/XYiMGM4MViPMr97kOcw=.ed25519"),
+			},
+		},
+
 		// {
 		// 	name:  "net-with-hostname",
 		// 	input: "net:localhost:12352~shs:x9a730cuA8I83lxfkYo0eewzaojxWryhDm07hVqnnLY=",
@@ -123,7 +135,7 @@ func TestParseNetAddress(t *testing.T) {
 					split := strings.Split(tc.input, ";")
 					tc.input = split[tc.inputIdx]
 				}
-				r.Equal(tc.input, addr.String())
+				r.Equal(tc.input, addr.String(), "generating parsed as a string again")
 			} else {
 				r.Equal(errors.Cause(err), tc.err)
 				r.Nil(addr)

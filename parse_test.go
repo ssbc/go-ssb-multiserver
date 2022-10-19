@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	ssb "go.mindeco.de/ssb-refs"
+	ssb "github.com/ssbc/go-ssb-refs"
 
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"

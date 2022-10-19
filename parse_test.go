@@ -62,7 +62,7 @@ func TestParseNetAddress(t *testing.T) {
 
 		{
 			name:  "localhost",
-			input: "net:localhost:18894~shs:sAjl0gdm+k6enX4o79FEwAz/XYiMGM4MViPMr97kOcw=",
+			input: "net:127.0.0.1:18894~shs:sAjl0gdm+k6enX4o79FEwAz/XYiMGM4MViPMr97kOcw=",
 			want: &NetAddress{
 				Addr: net.TCPAddr{
 					IP:   net.ParseIP("127.0.0.1"),
